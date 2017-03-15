@@ -12,6 +12,10 @@ Item {
   property int borderWidth
   property int radius
 
+  property bool hoverEnabled: true
+
+  signal buttonClicked
+
   Rectangle {
     id: blueRec
 
@@ -46,7 +50,7 @@ Item {
     MouseArea {
       id: blueRecMouseArea
 
-      hoverEnabled: true
+      hoverEnabled: button.hoverEnabled
 
       onEntered: {
         blueRec.rotation = -3
@@ -58,10 +62,8 @@ Item {
 
       anchors.fill: blueRec
       onClicked: {
-        console.warn("hello")
-        //Qt.quit()
+        buttonClicked()
       }
     }
   }
-
 }

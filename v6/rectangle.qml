@@ -19,6 +19,11 @@ Rectangle {
     height: rootTangle.width / 6
 
     anchors.centerIn: parent
+
+    // strange onN slots
+    onButtonClicked: {
+      console.warn("signal works?")
+    }
   }
 
   Rectangle {
